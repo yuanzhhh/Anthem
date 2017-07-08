@@ -8,8 +8,6 @@ import {getScrollTop, getScrollHeight, getWindowHeight} from '@/app/tool/scrollS
 import prop_dispatch from './index_prop_dispatch';
 //基类
 import BaseCom from '@/app/components/BaseComponent';
-//机器人组件
-import Robot from './Robot';
 
 /**
  * 容器组件
@@ -198,7 +196,7 @@ class Anthem extends BaseCom {
             if (screenNumIng !== this.props.numIng) {
                 this.changeScreen(screenNumIng);
             }
-
+            
             if (scrollTop === getScrollHeight()) {
                 //增加下一个屏幕的元素队列
                 this
@@ -263,19 +261,13 @@ class Anthem extends BaseCom {
     }
 
     render() {
-        const allRobot = this
-            .props
-            .renderRobot
-            .map(robot => {
-                return (<Robot key={robot.robotid} info={robot}/>);
-            });
         return (
             <Container
                 ref="anthemContainer"
                 style={{
                 height: this.props.containerHeight
             }}>
-                {allRobot}
+                {this.props.renderRobot}
             </Container>
         );
     }

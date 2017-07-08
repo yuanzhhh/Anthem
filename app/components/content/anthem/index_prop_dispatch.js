@@ -1,34 +1,12 @@
 import axios from 'axios';
 import server from '@/serverConf.js';
+import getRobot from './getRobot';
+
 
 /**
- * 获取当前显示robot
- * @param {*} state 
- */
-const renderRobot = state => {
-
-  const loadingScreen = state.getIn(['screen', 'loadingScreen']);
-
-  let robotList = null;
-  //遍历当前应该显示的屏幕下标号
-  loadingScreen.forEach(function (element) {
-    //通过屏幕号码获取信息
-    let locationInfo = state
-      .getIn([
-        'robot', 'locationInfo', element.toString()
-      ]);
-
-    robotList = robotList ? robotList.concat(locationInfo) : locationInfo;
-
-  }, this);
-
-  return robotList;
-}
-
-/**
- * 
- * @param {*} state 
- * @param {*} ownProps 
+ *
+ * @param {*} state
+ * @param {*} ownProps
  */
 const stateSetProp = (state, ownProps) => {
   return {
@@ -49,7 +27,7 @@ const stateSetProp = (state, ownProps) => {
     //windowHeight
     windowViewHeight: state.getIn(['arrangeProperties', 'windowViewHeight']),
     //当前显示robot
-    renderRobot: renderRobot(state),
+    renderRobot: getRobot(state),
     //请求图片数量
     requestImgNum: state.getIn(['arrangeProperties', 'requestImgNum']),
     //已存所有位置信息
@@ -57,15 +35,14 @@ const stateSetProp = (state, ownProps) => {
     //当前加载的屏幕队
     loadingScreen: state.getIn(['screen', 'loadingScreen']),
     //机器人父级容器高度
-    containerHeight: state.getIn(['arrangeProperties', 'containerHeight']),
-    
+    containerHeight: state.getIn(['arrangeProperties', 'containerHeight'])
   };
 }
 
 /**
- * 
- * @param {*} dispatch 
- * @param {*} ownProps 
+ *
+ * @param {*} dispatch
+ * @param {*} ownProps
  */
 const dispatchToProps = (dispatch, ownProps) => {
 
@@ -120,16 +97,12 @@ const dispatchToProps = (dispatch, ownProps) => {
       })
     },
 
-    //增加屏幕
     addScreen: () => {
       dispatch({
         type: 'ADD_screen'
       });
     },
 
-    /**
-     * 添加元素队列
-     */
     addlocationInfoNum: upNum => {
       dispatch({
         type: 'ADD_locationInfoNum',
@@ -137,7 +110,6 @@ const dispatchToProps = (dispatch, ownProps) => {
       });
     },
 
-    //增加当前加载的屏幕队
     addloadingScreen: screenAllNum => {
 
       dispatch({

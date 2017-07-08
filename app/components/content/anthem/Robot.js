@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
+import serverConf from '@/serverConf';
 
 import BaseCom from '@/app/components/BaseComponent';
-
 
 class Robot extends BaseCom {
     constructor(props) {
@@ -19,7 +19,7 @@ class Robot extends BaseCom {
                 top: this.props.info.top
             }}>
                 <img
-                    src={"http://172.17.120.218:10086/" + this.props.info.img}
+                    src={"http://" + serverConf.imgserver + "/" + this.props.info.img}
                     style={{
                     maxWidth: '100%',
                     border: 0,
