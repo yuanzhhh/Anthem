@@ -7,7 +7,7 @@ import reducer from './redux/reducer/index';
 import App from './components/App';
 import immutable from 'immutable';
 
-// require('offline-plugin/runtime').install();
+import 'vconsole';
 
 //基础规范css
 import 'normalize.css/normalize.css';

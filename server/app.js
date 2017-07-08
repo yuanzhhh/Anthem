@@ -12,11 +12,13 @@ onerror(app)
 
 // middlewares
 app.use(bodyparser({
-  enableTypes:['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text']
 }))
 app.use(json())
 app.use(logger())
-app.use(require('koa-static')(__dirname + '/public'));
+app.use(require('koa-static')(__dirname + '/public', {
+  maxage: 3600000
+}));
 
 app.use(async function (ctx, next) {
   await next();

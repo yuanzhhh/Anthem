@@ -12,9 +12,6 @@ import BaseCom from '@/app/components/BaseComponent';
 //机器人组件
 import Robot from './Robot';
 
-//获取文档总高度
-let windowHeight = getWindowHeight;
-
 /**
  * 容器组件
  */
@@ -191,6 +188,9 @@ class Anthem extends BaseCom {
 
     scrollAction() {
         window.onscroll = () => {
+            
+            const windowHeight = getWindowHeight();
+
             const scrollTop = getScrollTop() + windowHeight;
 
             let screenNumIng = (Math.floor(scrollTop / windowHeight)) - 1;

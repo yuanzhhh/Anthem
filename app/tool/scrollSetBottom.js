@@ -14,19 +14,11 @@ export function getScrollTop() {
 }
 //文档的总高度
 export function getScrollHeight() {
-  let bodyScrollHeight = 0,
-    documentScrollHeight = 0;
-  if (document.body) {
-    bodyScrollHeight = document.body.scrollHeight;
-  }
-  if (document.documentElement) {
-    documentScrollHeight = document.documentElement.scrollHeight;
-  }
-  return (bodyScrollHeight - documentScrollHeight > 0) ?
-    bodyScrollHeight :
-    documentScrollHeight;
+  return document.documentElement.scrollTop == 0 ?
+    document.body.scrollHeight :
+    document.documentElement.scrollHeight
 }
 //浏览器视口的高度
-export const getWindowHeight = (document.compatMode == "CSS1Compat") ?
-  document.documentElement.clientHeight :
-  document.body.clientHeight;
+export const getWindowHeight = () => (document.documentElement.scrollTop == 0 ?
+  document.body.clientHeight :
+  document.documentElement.clientHeight);

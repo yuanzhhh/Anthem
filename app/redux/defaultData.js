@@ -3,7 +3,7 @@
  */
 export const arrangeProperties = {
   //列数
-  maxColumns: 5,
+  maxColumns: 3,
   //间距(像素)
   spacing: 10,
   //最后一列属性
