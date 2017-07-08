@@ -42,23 +42,20 @@ module.exports = (state = immutable.fromJS(screen), action) => {
 
     case 'CHANGE_downChange':
       return state.update('loadingScreen', list => {
-
-        let newList=list.set(0, action.data);
-
-        newList=newList.toJS().sort((v1, v2) => (v1 - v2));
-
-        return immutable.fromJS(newList);
+        list = list.set(0, action.data - 1);
+        list = list.set(1, action.data);
+        list = list.set(2, action.data + 1);
+        list = list.set(3, action.data + 2);
+        return list;
       });
+
     case 'CHANGE_upChange':
-
       return state.update('loadingScreen', list => {
-
-       
-        let newList=list.set(list.size-1, action.data);
-
-        newList=newList.toJS().sort((v1, v2) => (v1 - v2));
-
-        return immutable.fromJS(newList);
+        list = list.set(0, action.data - 2);
+        list = list.set(1, action.data - 1);
+        list = list.set(2, action.data);
+        list = list.set(3, action.data + 1);
+        return list;
       });
 
     default:

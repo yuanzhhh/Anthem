@@ -170,17 +170,17 @@ const dispatchToProps = (dispatch, ownProps) => {
       })
     },
 
-    downChange: newShowScreenNum => {
+    downChange: screenNumIng => {
       dispatch({
         type: 'CHANGE_downChange',
-        data: newShowScreenNum
+        data: screenNumIng
       });
     },
 
-    upChange: newShowScreenNum => {
+    upChange: screenNumIng => {
       dispatch({
         type: 'CHANGE_upChange',
-        data: newShowScreenNum
+        data: screenNumIng
       });
     },
 

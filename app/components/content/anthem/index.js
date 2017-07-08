@@ -199,10 +199,6 @@ class Anthem extends BaseCom {
                 this.changeScreen(screenNumIng);
             }
 
-            /**
-             * 到底部
-             * 获取新的图片资源
-             */
             if (scrollTop === getScrollHeight()) {
                 //增加下一个屏幕的元素队列
                 this
@@ -245,10 +241,11 @@ class Anthem extends BaseCom {
         if (screenNumIng > this.props.oldNum) {
             //向下滑动
             const newShowScreenNum = screenNumIng + 2;
-            (this.props.loadingScreen.indexOf(screenNumIng) === 2 && this.props.locationInfo.getIn([newShowScreenNum.toString()]))
+
+            (this.props.loadingScreen.indexOf(newShowScreenNum) === -1 && this.props.locationInfo.getIn([newShowScreenNum.toString()]))
                 ? this
                     .props
-                    .downChange(newShowScreenNum)
+                    .downChange(screenNumIng)
                 : null;
 
         } else if (screenNumIng < this.props.oldNum) {
@@ -256,11 +253,12 @@ class Anthem extends BaseCom {
             //向上滑动
             const newShowScreenNum = screenNumIng - 2;
 
-            (this.props.loadingScreen.indexOf(screenNumIng) === 1 && newShowScreenNum >= 0)
+            (this.props.loadingScreen.indexOf(newShowScreenNum) === -1 && newShowScreenNum >= 0)
                 ? this
                     .props
-                    .upChange(newShowScreenNum)
+                    .upChange(screenNumIng)
                 : null;
+
         }
     }
 
