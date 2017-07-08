@@ -41,7 +41,7 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.css'],
     alias: {
       // ================================
       // 自定义路径别名

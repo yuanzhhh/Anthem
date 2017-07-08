@@ -3,7 +3,7 @@
   "description": "Anthem for eeeik v2.0",
   "main": "app/main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
+    "build": "webpack --config webpack.production.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app & node server/bin/www"
   },
   "dependencies": {
@@ -43,6 +43,8 @@
     "eslint-plugin-jsx-a11y": "3.x",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-react": "latest",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.29.0",
     "husky": "^0.12.0",
     "image-size": "^0.6.0",
     "koa": "^2.2.0",

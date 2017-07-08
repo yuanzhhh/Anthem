@@ -117,7 +117,6 @@ class Anthem extends BaseCom {
      * 增加的时候开始 定位
      */
     positioning(element, robotId) {
-
         //屏幕总数
         let screenAllNum = this.props.screenAllNum;
 
@@ -133,6 +132,7 @@ class Anthem extends BaseCom {
 
         //计算出图片在进入dom后的高度
         const imgHeight = (columnsWidth / imgWidth) * element.height;
+
         element.domHeight = imgHeight;
 
         //宽

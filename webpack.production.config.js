@@ -1,8 +1,16 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const UglifyJsPlugin = new webpack
+  .optimize
+  .UglifyJsPlugin({
+   
+    //压缩
+    compress: {
+      // 在UglifyJs删除没有用到的代码时不输出警告
+      warnings: false,
+    }
+  });
 
 module.exports = {
   devtool: 'cheap-source-map',
@@ -17,7 +25,6 @@ module.exports = {
   module: {
     loaders: [{
         test: /\.css$/,
-        include: path.resolve(__dirname, 'app'),
         loader: 'style-loader!css-loader'
       },
       {
@@ -29,7 +36,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.css'],
     alias: {
       // ================================
       // 自定义路径别名
@@ -38,24 +45,15 @@ module.exports = {
     }
   },
   plugins: [
-    new uglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    UglifyJsPlugin,
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
     }),
     new CopyWebpackPlugin([{
-        from: './app/index.html',
-        to: 'index.html'
-      },
-      {
-        from: './app/main.css',
-        to: 'main.css'
-      }
-    ])
+      from: './app/index.html',
+      to: 'index.html'
+    }])
   ]
 };
