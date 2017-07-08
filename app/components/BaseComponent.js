@@ -24,14 +24,12 @@ class BaseComponent extends React.Component {
                 return true;
             }
         }
-
         //state 新旧对比
         for (const key in nextState) {
             if (!is(thisState[key], nextState[key])) {
                 return true;
             }
         }
-        console.log('falsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalsefalse');
         return false;
     }
 }

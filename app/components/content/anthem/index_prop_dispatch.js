@@ -1,23 +1,24 @@
 import axios from 'axios';
-
+import server from '@/serverConf.js';
 
 /**
  * 获取当前显示robot
  * @param {*} state 
  */
 const renderRobot = state => {
-  const loadingScreen = state.getIn(['screen', 'loadingScreen'])
-  let robotList = [];
+
+  const loadingScreen = state.getIn(['screen', 'loadingScreen']);
+
+  let robotList = null;
   //遍历当前应该显示的屏幕下标号
   loadingScreen.forEach(function (element) {
     //通过屏幕号码获取信息
     let locationInfo = state
       .getIn([
         'robot', 'locationInfo', element.toString()
-      ])
-      .toJS();
+      ]);
 
-    robotList = robotList.concat(locationInfo);
+    robotList = robotList ? robotList.concat(locationInfo) : locationInfo;
 
   }, this);
 
@@ -56,8 +57,8 @@ const stateSetProp = (state, ownProps) => {
     //当前加载的屏幕队
     loadingScreen: state.getIn(['screen', 'loadingScreen']),
     //机器人父级容器高度
-    containerHeight:state.getIn(['arrangeProperties', 'containerHeight']),
-
+    containerHeight: state.getIn(['arrangeProperties', 'containerHeight']),
+    
   };
 }
 
@@ -187,7 +188,7 @@ const dispatchToProps = (dispatch, ownProps) => {
     /**
      * 获取图片
      */
-    getNewImgData: requestImgNum => axios.get('http://172.17.120.218:10086/', {
+    getNewImgData: requestImgNum => axios.get('http://' + server.imgserver + '/', {
       params: {
         num: requestImgNum
       }

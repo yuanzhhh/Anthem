@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 
 import {getScrollTop, getScrollHeight, getWindowHeight} from '@/app/tool/scrollSetBottom';
 
-//redux 摄入摄出
 import prop_dispatch from './index_prop_dispatch';
 //基类
 import BaseCom from '@/app/components/BaseComponent';
@@ -142,6 +141,7 @@ class Anthem extends BaseCom {
         element.domWidth = columnsWidth;
 
         const robotTopLocation = this.props.robotTopLocation;
+
         //获取top数组中最小的座位下标
         const minTopNum = robotTopLocation.indexOf(Math.min.apply(Math, robotTopLocation));
 
@@ -188,7 +188,7 @@ class Anthem extends BaseCom {
 
     scrollAction() {
         window.onscroll = () => {
-            
+
             const windowHeight = getWindowHeight();
 
             const scrollTop = getScrollTop() + windowHeight;
@@ -226,20 +226,21 @@ class Anthem extends BaseCom {
             }
         };
     }
-    //显示屏幕号 转换
+
+    //显示屏幕号 change
     changeScreen(screenNumIng) {
-        //更换上一个旧屏幕下标
+        //update oldScreen
         this
             .props
             .changeOldNum(this.props.numIng);
 
-        //更换当前屏幕下标
+        //update screenIng
         this
             .props
             .changeScreen(screenNumIng);
 
         if (screenNumIng > this.props.oldNum) {
-            //向下滑动
+            //down
             const newShowScreenNum = screenNumIng + 2;
 
             (this.props.loadingScreen.indexOf(newShowScreenNum) === -1 && this.props.locationInfo.getIn([newShowScreenNum.toString()]))
@@ -249,8 +250,7 @@ class Anthem extends BaseCom {
                 : null;
 
         } else if (screenNumIng < this.props.oldNum) {
-
-            //向上滑动
+            //up
             const newShowScreenNum = screenNumIng - 2;
 
             (this.props.loadingScreen.indexOf(newShowScreenNum) === -1 && newShowScreenNum >= 0)

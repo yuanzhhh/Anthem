@@ -19,19 +19,15 @@ module.exports = (state = immutable.fromJS(screen), action) => {
       let subscript = action.data - 1;
       //返回新的显示数组
       return state.update('loadingScreen', loadingScreenList => {
-        const newLadingScreenList = [];
         //最多显示4个屏幕
         for (let i = 0; i < 4; i++) {
           let showScreen = subscript - i;
           if (showScreen < 0) {
             break;
           }
-          newLadingScreenList.push(showScreen);
+          loadingScreenList = loadingScreenList.set(i, showScreen);
         }
-
-        return immutable.fromJS(newLadingScreenList
-          //从小到大排列
-          .sort((v1, v2) => (v1 - v2)));
+        return loadingScreenList;
       });
 
     case 'UP_loadingScreen':

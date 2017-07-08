@@ -3,12 +3,12 @@ const path = require('path');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
+const devserver = require('./serverConf');
 module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: true,
-    host: '172.17.120.218',
+    host: devserver.devserver,
     overlay: {
       errors: true,
       warnings: true
@@ -19,9 +19,10 @@ module.exports = {
     quiet: false
   },
   entry: [
-    "webpack-dev-server/client?http://172.17.120.218:8080/",
+    "webpack-dev-server/client?http://" + devserver.devserver + ":8080/",
     "webpack/hot/only-dev-server",
-    path.resolve(__dirname, 'app/main.js')],
+    path.resolve(__dirname, 'app/main.js')
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
@@ -41,11 +42,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-     alias: {
+    alias: {
       // ================================
       // 自定义路径别名
       // ================================
-      '@': path.join(__dirname,'')
+      '@': path.join(__dirname, '')
     }
   },
   plugins: [
@@ -58,9 +59,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new BrowserSyncPlugin({
-      host: '172.17.120.218',
+      host: devserver.devserver,
       port: 9090,
-      proxy: 'http://172.17.120.218:8080',
+      proxy: 'http://' + devserver.devserver + ':8080',
       logConnections: false,
       notify: false
     }, {
