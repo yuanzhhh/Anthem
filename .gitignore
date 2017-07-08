@@ -49,3 +49,5 @@ lib
 
 # Editor
 .idea
+
+package-lock.json
