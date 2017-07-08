@@ -1,21 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
 import {connect} from 'react-redux';
 
 import BaseCom from '@/app/components/BaseComponent';
 
-const RobotMe = styled.div `
-    width:${props => props.columnsWidth};
-    position: absolute;
-    left:${props => props.locLeft};
-    top:${props => props.locTop};
-    &>img{
-        max-width:100%;
-        border:0;
-        display:block;
-    }
-`;
 
 class Robot extends BaseCom {
     constructor(props) {
@@ -23,14 +11,23 @@ class Robot extends BaseCom {
     }
     render() {
         return (
-            <RobotMe
-                columnsWidth={this.props.info.domWidth}
-                locLeft={this.props.info.left}
-                locTop={this.props.info.top}>
-                <img src={"http://localhost:10086/" + this.props.info.img}/>
-            </RobotMe>
+            <div
+                style={{
+                width: this.props.info.domWidth,
+                position: 'absolute',
+                left: this.props.info.left,
+                top: this.props.info.top
+            }}>
+                <img
+                    src={"http://172.17.120.218:10086/" + this.props.info.img}
+                    style={{
+                    maxWidth: '100%',
+                    border: 0,
+                    display: 'block'
+                }}/>
+            </div>
         )
     }
 }
 
-export default connect()(Robot, RobotMe);
+export default connect()(Robot);

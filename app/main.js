@@ -5,7 +5,6 @@ import {createStore} from 'redux';
 import {combineReducers} from 'redux-immutable';
 import reducer from './redux/reducer/index';
 import App from './components/App';
-import fastClick from 'fastclick';
 import immutable from 'immutable';
 
 // require('offline-plugin/runtime').install();
@@ -20,18 +19,15 @@ const margeReducer = combineReducers(reducer);
 //创建 store
 const store = createStore(margeReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-// 移动端30ms的延迟
-fastClick.attach(document.body);
-
 // 检测不必要的更新
-const {whyDidYouUpdate} = require('why-did-you-update');
-let createClass = React.createClass;
-Object.defineProperty(React, 'createClass', {
-  set: (nextCreateClass) => {
-    createClass = nextCreateClass;
-  }
-});
-whyDidYouUpdate(React);
+// const {whyDidYouUpdate} = require('why-did-you-update');
+// let createClass = React.createClass;
+// Object.defineProperty(React, 'createClass', {
+//   set: (nextCreateClass) => {
+//     createClass = nextCreateClass;
+//   }
+// });
+// whyDidYouUpdate(React);
 
 const render = () => {
   ReactDOM.render(

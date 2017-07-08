@@ -162,6 +162,12 @@ class Anthem extends BaseCom {
             .props
             .setTop(minTopNum, imgHeight);
 
+        const topNum = this.props.robotTopLocation[minTopNum];
+
+        this
+            .props
+            .upContainerHeight(topNum);
+
         //获取所放置的屏幕号 下标
         let srceenIng = screenAllNum - 1;
 
@@ -249,7 +255,7 @@ class Anthem extends BaseCom {
 
             //向上滑动
             const newShowScreenNum = screenNumIng - 2;
-            
+
             (this.props.loadingScreen.indexOf(screenNumIng) === 1 && newShowScreenNum >= 0)
                 ? this
                     .props
@@ -266,7 +272,11 @@ class Anthem extends BaseCom {
                 return (<Robot key={robot.robotid} info={robot}/>);
             });
         return (
-            <Container ref="anthemContainer">
+            <Container
+                ref="anthemContainer"
+                style={{
+                height: this.props.containerHeight
+            }}>
                 {allRobot}
             </Container>
         );

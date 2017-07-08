@@ -10,6 +10,8 @@ export const arrangeProperties = {
   finalColumns: null,
   //父级容器宽度
   parentWidth: null,
+  //机器人父级容器高度
+  containerHeight:0,
   //列宽
   columnsWidth: null,
   //可视区域高度 160为默认值

@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: true,
-    // host: '172.17.120.218',
+    host: '172.17.120.218',
     overlay: {
       errors: true,
       warnings: true
@@ -19,7 +19,7 @@ module.exports = {
     quiet: false
   },
   entry: [
-    "webpack-dev-server/client?http://127.0.0.1:8080/",
+    "webpack-dev-server/client?http://172.17.120.218:8080/",
     "webpack/hot/only-dev-server",
     path.resolve(__dirname, 'app/main.js')],
   output: {
@@ -58,9 +58,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new BrowserSyncPlugin({
-      host: '127.0.0.1',
+      host: '172.17.120.218',
       port: 9090,
-      proxy: 'http://127.0.0.1:8080',
+      proxy: 'http://172.17.120.218:8080',
       logConnections: false,
       notify: false
     }, {

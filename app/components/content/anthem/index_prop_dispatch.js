@@ -20,7 +20,7 @@ const renderRobot = state => {
     robotList = robotList.concat(locationInfo);
 
   }, this);
-  
+
   return robotList;
 }
 
@@ -41,14 +41,10 @@ const stateSetProp = (state, ownProps) => {
     numIng: state.getIn(['screen', 'numIng']),
     //旧屏幕
     oldNum: state.getIn(['screen', 'oldNum']),
-    //等待开始渲染的robot下标
-    renderingNum: state.getIn(['robot', 'renderingNum']),
     //left
     locationLeft: state.getIn(['arrangeProperties', 'locationLeft']),
     //top
     robotTopLocation: state.getIn(['robot', 'robotTopLocation']),
-    //robot
-    robotContainer: state.getIn(['robot', 'robotContainer']),
     //windowHeight
     windowViewHeight: state.getIn(['arrangeProperties', 'windowViewHeight']),
     //当前显示robot
@@ -58,7 +54,9 @@ const stateSetProp = (state, ownProps) => {
     //已存所有位置信息
     locationInfo: state.getIn(['robot', 'locationInfo']),
     //当前加载的屏幕队
-    loadingScreen: state.getIn(['screen', 'loadingScreen'])
+    loadingScreen: state.getIn(['screen', 'loadingScreen']),
+    //机器人父级容器高度
+    containerHeight:state.getIn(['arrangeProperties', 'containerHeight']),
 
   };
 }
@@ -164,6 +162,14 @@ const dispatchToProps = (dispatch, ownProps) => {
       })
     },
 
+    //更新容器高度
+    upContainerHeight: newHeight => {
+      dispatch({
+        type: 'UP_containerHeight',
+        data: newHeight
+      })
+    },
+
     downChange: newShowScreenNum => {
       dispatch({
         type: 'CHANGE_downChange',
@@ -181,7 +187,7 @@ const dispatchToProps = (dispatch, ownProps) => {
     /**
      * 获取图片
      */
-    getNewImgData: requestImgNum => axios.get('http://localhost:10086/', {
+    getNewImgData: requestImgNum => axios.get('http://172.17.120.218:10086/', {
       params: {
         num: requestImgNum
       }

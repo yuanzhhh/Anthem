@@ -29,6 +29,8 @@ module.exports = (state = immutable.fromJS(arrangeProperties), action) => {
       return state.set('locationLeft', newLeftLocation);
     case 'SET_windowHeight':
       return state.update('windowViewHeight', defaultHeight => (defaultHeight + action.data));
+    case 'UP_containerHeight':
+      return state.update('containerHeight', currentHeight => (currentHeight < action.data ? action.data : currentHeight));
     default:
       return state;
   }
