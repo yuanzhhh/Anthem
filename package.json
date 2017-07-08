@@ -1,0 +1,80 @@
+{
+  "name": "anthem",
+  "description": "Anthem for eeeik v2.0",
+  "main": "app/main.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app & node server/bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-runtime": "6.x",
+    "fastclick": "^1.0.6",
+    "immutable": "^3.8.1",
+    "normalize.css": "^7.0.0",
+    "react": "15.x",
+    "react-dom": "15.x",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.0",
+    "redux-immutable": "^4.0.0",
+    "styled-components": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.x",
+    "babel-eslint": "7.x",
+    "babel-loader": "6.x",
+    "babel-plugin-transform-runtime": "6.x",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "6.x",
+    "babel-preset-react": "6.x",
+    "babel-preset-stage-0": "6.x",
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "commitizen": "^2.9.3",
+    "conventional-changelog-cli": "1.x",
+    "copy-webpack-plugin": "latest",
+    "cross-env": "^5.0.1",
+    "css-loader": "~0.26.1",
+    "cz-conventional-changelog": "^1.2.0",
+    "debug": "^2.6.3",
+    "eslint": "latest",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-compat": "^1.0.0",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jsx-a11y": "3.x",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "latest",
+    "husky": "^0.12.0",
+    "image-size": "^0.6.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "nyan-progress-webpack-plugin": "^1.2.0",
+    "offline-plugin": "^4.8.1",
+    "open-browser-webpack-plugin": "0.0.3",
+    "react-hot-loader": "^1.3.1",
+    "style-loader": "~0.13.1",
+    "validate-commit-msg": "2.x",
+    "webpack": "latest",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "latest",
+    "why-did-you-update": "0.0.8"
+  },
+  "keywords": [
+    "es6",
+    "web app",
+    "boilerplate"
+  ],
+  "author": "Yuan ZiHang",
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

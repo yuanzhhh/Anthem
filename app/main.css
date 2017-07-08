@@ -1,0 +1,13 @@
+body {
+  background: #e8e8e8;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none
+}
