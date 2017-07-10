@@ -3,6 +3,10 @@
 waterfalls flow react demo simulate</br>
 by using [Redux](https://github.com/reactjs/redux) + [react-redux](https://github.com/reactjs/react-redux) + [styled-components](https://github.com/styled-components/styled-components) + [immutable.js](https://github.com/facebook/immutable-js)
 
+## Run help node_modules
+Dome server is [koa2](https://github.com/koajs/koa)</br>
+Packaging [webpack3](https://github.com/webpack/webpack)
+
 ## Usage
 ```
 # install node_modules
