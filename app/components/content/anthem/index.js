@@ -51,10 +51,7 @@ class Anthem extends BaseCom {
 
         this
             .getNewImg()
-            .then(() => {
-                //滚动事件
-                this.scrollAction();
-            });
+            .then(() => window.onscroll = () => this.scrollAction());
 
     }
     //随机id
@@ -185,44 +182,42 @@ class Anthem extends BaseCom {
     }
 
     scrollAction() {
-        window.onscroll = () => {
 
-            const windowHeight = getWindowHeight();
+        const windowHeight = getWindowHeight();
 
-            const scrollTop = getScrollTop() + windowHeight;
+        const scrollTop = getScrollTop() + windowHeight;
 
-            let screenNumIng = (Math.floor(scrollTop / windowHeight)) - 1;
+        const screenNumIng = (Math.floor(scrollTop / windowHeight)) - 1;
 
-            if (screenNumIng !== this.props.numIng) {
-                this.changeScreen(screenNumIng);
-            }
-            
-            if (scrollTop === getScrollHeight()) {
-                //增加下一个屏幕的元素队列
-                this
-                    .props
-                    .addlocationInfoNum(this.props.screenAllNum);
+        if (screenNumIng !== this.props.numIng) {
+            this.changeScreen(screenNumIng);
+        }
 
-                //增加屏幕
-                this
-                    .props
-                    .addScreen();
+        if (scrollTop === getScrollHeight()) {
+            //增加下一个屏幕的元素队列
+            this
+                .props
+                .addlocationInfoNum(this.props.screenAllNum);
 
-                //增加当前加载的屏幕队
-                this
-                    .props
-                    .addloadingScreen(this.props.screenAllNum);
+            //增加屏幕
+            this
+                .props
+                .addScreen();
 
-                //获取未显示的机器人屏幕下标
-                const getNoShowRobotListNum = this.props.screenAllNum - 4;
+            //增加当前加载的屏幕队
+            this
+                .props
+                .addloadingScreen(this.props.screenAllNum);
 
-                this.getNewImg((getNoShowRobotListNum < 1
-                    ? undefined
-                    //传入下标
-                    : (getNoShowRobotListNum - 1)));
+            //获取未显示的机器人屏幕下标
+            const getNoShowRobotListNum = this.props.screenAllNum - 4;
 
-            }
-        };
+            this.getNewImg((getNoShowRobotListNum < 1
+                ? undefined
+                //传入下标
+                : (getNoShowRobotListNum - 1)));
+
+        }
     }
 
     //显示屏幕号 change
