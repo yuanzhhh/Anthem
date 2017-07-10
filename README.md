@@ -7,6 +7,9 @@ by using [Redux](https://github.com/reactjs/redux) + [react-redux](https://githu
 Dev images server is [koa2](https://github.com/koajs/koa) <b>node v8.0</b></br>
 Packaging [webpack3](https://github.com/webpack/webpack)
 
+## Dome screenshot
+![demo](https://github.com/yuanzhhh/Anthem/blob/master/dome.png "demo")
+
 ## Usage
 ```
 # install node_modules
@@ -19,5 +22,3 @@ npm run dev
 # build for production
 npm run build
 ```
-## Dome screenshot
-![demo](https://github.com/yuanzhhh/Anthem/blob/master/dome.png "demo")
