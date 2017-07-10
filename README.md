@@ -15,7 +15,7 @@ Packaging [webpack3](https://github.com/webpack/webpack)
 git clone https://github.com/yuanzhhh/Anthem.git
 npm install
 
-# mac dev
+# dev
 npm run dev
 
 # build for production
