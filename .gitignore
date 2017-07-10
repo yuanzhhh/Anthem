@@ -51,3 +51,4 @@ lib
 .idea
 
 package-lock.json
+.vscode
