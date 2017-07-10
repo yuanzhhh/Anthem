@@ -4,6 +4,8 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const devserver = require('./serverConf');
+const env = process.env.NODE_ENV.trim() // 当前环境
+
 module.exports = {
   devServer: {
     historyApiFallback: true,
@@ -54,6 +56,16 @@ module.exports = {
     new webpack
     .optimize
     .ModuleConcatenationPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': { 
+        NODE_ENV: JSON.stringify('production')
+      },
+      // ================================
+      // 配置开发全局常量
+      // ================================
+      __DEV__: env === 'development',
+      __PROD__: env === 'production'
+    }),
     // 进度条
     new NyanProgressPlugin(),
     new webpack.HotModuleReplacementPlugin(),

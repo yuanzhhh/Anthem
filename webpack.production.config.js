@@ -1,10 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const env = process.env.NODE_ENV.trim() // 当前环境
 const UglifyJsPlugin = new webpack
   .optimize
   .UglifyJsPlugin({
-   
+
     //压缩
     compress: {
       // 在UglifyJs删除没有用到的代码时不输出警告
@@ -49,7 +50,12 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
-      }
+      },
+      // ================================
+      // 配置开发全局常量
+      // ================================
+      __DEV__: env === 'development',
+      __PROD__: env === 'production'
     }),
     new CopyWebpackPlugin([{
       from: './app/index.html',

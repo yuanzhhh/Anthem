@@ -7,27 +7,35 @@ import reducer from './redux/reducer/index';
 import App from './components/App';
 import immutable from 'immutable';
 
-// import 'vconsole';
-
-//基础规范css
+// import 'vconsole'; 基础规范css
 import 'normalize.css/normalize.css';
 import './main.css';
 
 const initialState = immutable.Map();
 //利用 redux-immutable 生成reducer
 const margeReducer = combineReducers(reducer);
-//创建 store
-const store = createStore(margeReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-// 检测不必要的更新
-// const {whyDidYouUpdate} = require('why-did-you-update');
-// let createClass = React.createClass;
-// Object.defineProperty(React, 'createClass', {
-//   set: (nextCreateClass) => {
-//     createClass = nextCreateClass;
-//   }
-// });
-// whyDidYouUpdate(React);
+//创建 store
+let store = null;
+
+if (__DEV__) {
+  store = createStore(margeReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  // //检测不必要的更新 打开注释，页面会导致卡顿
+  // const {whyDidYouUpdate} = require('why-did-you-update');
+  // let createClass = React.createClass;
+  // Object.defineProperty(React, 'createClass', {
+  //   set: (nextCreateClass) => {
+  //     createClass = nextCreateClass;
+  //   }
+  // });
+  // whyDidYouUpdate(React);
+  //mobile devtool
+  require('vconsole');
+}
+
+if (__PROD__) {
+  store = createStore(margeReducer, initialState);
+}
 
 const render = () => {
   ReactDOM.render(
@@ -36,4 +44,3 @@ const render = () => {
   </Provider>, document.body.appendChild(document.createElement('div')));
 }
 render();
-
