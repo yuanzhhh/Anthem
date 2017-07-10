@@ -31,6 +31,7 @@ if (__DEV__) {
   // whyDidYouUpdate(React);
   //mobile devtool
   require('vconsole');
+
 }
 
 if (__PROD__) {

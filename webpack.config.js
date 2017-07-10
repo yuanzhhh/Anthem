@@ -5,6 +5,8 @@ const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const devserver = require('./serverConf');
 const env = process.env.NODE_ENV.trim() // 当前环境
+//启动图片服务器
+require('./server/bin/www');
 
 module.exports = {
   devServer: {
@@ -57,7 +59,7 @@ module.exports = {
     .optimize
     .ModuleConcatenationPlugin(),
     new webpack.DefinePlugin({
-      'process.env': { 
+      'process.env': {
         NODE_ENV: JSON.stringify('production')
       },
       // ================================

@@ -18,9 +18,6 @@ npm install
 # mac dev
 npm run dev
 
-# windows dev
-npm run dev & node server/bin/www
-
 # build for production
 npm run build
 ```
