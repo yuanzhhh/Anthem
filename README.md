@@ -1,8 +1,14 @@
-#### anthem瀑布流，基于React and by using Redux + Redux-react + styled-components + immutable.js
-#### 开发阶段，暂无更多说明
-#### 感兴趣可以clone玩玩
+
+## Intro
+waterfalls flow react demo simulate.
+by using [Redux](https://github.com/reactjs/redux) + [react-redux](https://github.com/reactjs/react-redux) + [styled-components](https://github.com/styled-components/styled-components) + [immutable.js](https://github.com/facebook/immutable-js)
 
 ```
-npm i or yarn
+# install node_modules
+git clone https://github.com/yuanzhhh/Anthem.git
+npm install
+# for dev
 npm run dev
+# build for production
+npm run build
 ```
