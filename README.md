@@ -13,7 +13,7 @@ Packaging [webpack3](https://github.com/webpack/webpack)
 git clone https://github.com/yuanzhhh/Anthem.git
 npm install
 # for dev
-npm run dev
+npm run dev & node server/bin/www
 # build for production
 npm run build
 ```
