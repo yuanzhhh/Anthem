@@ -4,7 +4,7 @@
   "main": "app/main.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app & node server/bin/www "
   },
   "dependencies": {
     "axios": "^0.16.2",
