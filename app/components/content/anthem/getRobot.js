@@ -18,7 +18,7 @@ const renderRobot = state => {
         let locationInfo = state.getIn([
             'robot', 'locationInfo', element.toString()
         ]);
-        //一定几率会出现undefined
+        //排除undefined
         if(!locationInfo){
             return;
         }
