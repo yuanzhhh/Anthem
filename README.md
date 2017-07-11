@@ -14,7 +14,7 @@ Packaging [webpack3](https://github.com/webpack/webpack)
 ## Usage
 ```
 # install node_modules
-git clone https://github.com/yuanzhhh/Anthem.git
+git clone https://github.com/yuanzhhh/Anthem.git && cd Anthem
 npm install
 
 # dev
