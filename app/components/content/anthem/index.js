@@ -243,10 +243,11 @@ class Anthem extends BaseCom {
                 : null;
 
         } else if (screenNumIng < this.props.oldNum) {
+            
             //up
             const newShowScreenNum = screenNumIng - 2;
 
-            (this.props.loadingScreen.indexOf(newShowScreenNum) === -1 && newShowScreenNum >= 0)
+            (this.props.loadingScreen.indexOf(newShowScreenNum) === -1)
                 ? this
                     .props
                     .upChange(screenNumIng)
