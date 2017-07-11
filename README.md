@@ -7,7 +7,7 @@ By using [Redux](https://github.com/reactjs/redux) + [react-redux](https://githu
 Dev images server is [koa2](https://github.com/koajs/koa) <b>node v8.0</b></br>
 Packaging [webpack3](https://github.com/webpack/webpack)
 
-## Dome 
+## Demo
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.png "demo_png")
 
