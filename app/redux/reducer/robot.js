@@ -11,8 +11,7 @@ module.exports = (state = immutable.fromJS(robot), action) => {
      */
     case 'SET_addlocationInfo':
 
-      const screenNumIng = action.data.screenNumIng.toString();
-      return state.updateIn(['locationInfo', screenNumIng], list => list.push({
+      return state.updateIn(['locationInfo', action.data.screenNumIng.toString()], list => list.push({
         robotid: action.data.robotId,
         img: action.data.imgdata.src,
         owidth: action.data.imgdata.width,
