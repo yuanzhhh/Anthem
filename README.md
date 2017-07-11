@@ -8,7 +8,8 @@ Dev images server is [koa2](https://github.com/koajs/koa) <b>node v8.0</b></br>
 Packaging [webpack3](https://github.com/webpack/webpack)
 
 ## Dome screenshot
-![demo](https://github.com/yuanzhhh/Anthem/blob/master/dome.png "demo")
+![demo](https://github.com/yuanzhhh/Anthem/blob/master/dome.png "demo_png")
+![demo](https://github.com/yuanzhhh/Anthem/blob/master/dome.gif "demo_gif")
 
 ## Usage
 ```
