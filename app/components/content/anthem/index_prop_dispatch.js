@@ -87,75 +87,55 @@ const dispatchToProps = (dispatch, ownProps) => {
     }),
 
     //设置top
-    setTop: (columnsNum, newTop) => {
-      dispatch({
-        type: 'SET_top',
-        data: {
-          columnsNum,
-          height: newTop
-        }
-      })
-    },
+    setTop: (columnsNum, newTop) => dispatch({
+      type: 'SET_top',
+      data: {
+        columnsNum,
+        height: newTop
+      }
+    }),
 
-    addScreen: () => {
-      dispatch({
-        type: 'ADD_screen'
-      });
-    },
+    addScreen: () => dispatch({
+      type: 'ADD_screen'
+    }),
 
-    addlocationInfoNum: upNum => {
-      dispatch({
-        type: 'ADD_locationInfoNum',
-        data: upNum
-      });
-    },
+    addlocationInfoNum: upNum => dispatch({
+      type: 'ADD_locationInfoNum',
+      data: upNum
+    }),
 
-    addloadingScreen: screenAllNum => {
-
-      dispatch({
-        type: 'ADD_loadingScreen',
-        data: screenAllNum
-      });
-
-    },
+    addloadingScreen: screenAllNum => dispatch({
+      type: 'ADD_loadingScreen',
+      data: screenAllNum
+    }),
 
     //更换上一个屏幕下标
-    changeOldNum: newOldNum => {
-      dispatch({
-        type: 'UP_loadingScreen',
-        data: newOldNum
-      })
-    },
+    changeOldNum: newOldNum => dispatch({
+      type: 'UP_loadingScreen',
+      data: newOldNum
+    }),
 
     //更换当前屏幕下标
-    changeScreen: screenNumIng => {
-      dispatch({
-        type: 'UP_changeScreen',
-        data: screenNumIng
-      })
-    },
+    changeScreen: screenNumIng => dispatch({
+      type: 'UP_changeScreen',
+      data: screenNumIng
+    }),
 
     //更新容器高度
-    upContainerHeight: newHeight => {
-      dispatch({
-        type: 'UP_containerHeight',
-        data: newHeight
-      })
-    },
+    upContainerHeight: newHeight => dispatch({
+      type: 'UP_containerHeight',
+      data: newHeight
+    }),
 
-    downChange: screenNumIng => {
-      dispatch({
-        type: 'CHANGE_downChange',
-        data: screenNumIng
-      });
-    },
+    downChange: screenNumIng => dispatch({
+      type: 'CHANGE_downChange',
+      data: screenNumIng
+    }),
 
-    upChange: screenNumIng => {
-      dispatch({
-        type: 'CHANGE_upChange',
-        data: screenNumIng
-      });
-    },
+    upChange: screenNumIng => dispatch({
+      type: 'CHANGE_upChange',
+      data: screenNumIng
+    }),
 
     /**
      * 获取图片

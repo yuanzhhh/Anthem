@@ -20,8 +20,5 @@ class App extends BaseCom {
     );
   }
 }
-const stateSetProp = (state, ownProps) => {
-  return {tt: 'abc'};
-}
 
-export default connect(stateSetProp)(App);
+export default connect()(App);

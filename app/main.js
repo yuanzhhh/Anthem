@@ -7,7 +7,7 @@ import reducer from './redux/reducer/index';
 import App from './components/App';
 import immutable from 'immutable';
 
-// import 'vconsole'; 基础规范css
+//基础规范css
 import 'normalize.css/normalize.css';
 import './main.css';
 
@@ -29,7 +29,8 @@ if (__DEV__) {
   //   }
   // });
   // whyDidYouUpdate(React);
-  //mobile devtool
+
+  //mobile devtool 移动端调试
   require('vconsole');
 
 }
