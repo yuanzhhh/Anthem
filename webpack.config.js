@@ -41,7 +41,8 @@ module.exports = {
       test: /\.js[x]?$/,
       include: path.resolve(__dirname, 'app'),
       exclude: /node_modules/,
-      loader: ['react-hot-loader', 'babel-loader']
+      //cacheDirectory 增加babel编译缓存
+      loader: ['react-hot-loader', 'babel-loader?cacheDirectory']
     }]
   },
   resolve: {

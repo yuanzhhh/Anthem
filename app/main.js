@@ -17,7 +17,6 @@ const margeReducer = combineReducers(reducer);
 
 //创建 store
 let store = null;
-
 if (__DEV__) {
   store = createStore(margeReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
   // //检测不必要的更新 打开注释，页面会导致卡顿
