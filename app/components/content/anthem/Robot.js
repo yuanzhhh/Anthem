@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {connect} from 'react-redux';
 import serverConf from '@/serverConf';
 
 import BaseCom from '@/app/components/BaseComponent';
@@ -30,4 +28,4 @@ class Robot extends BaseCom {
     }
 }
 
-export default connect()(Robot);
+export default Robot;
