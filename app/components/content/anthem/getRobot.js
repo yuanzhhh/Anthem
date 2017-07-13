@@ -13,7 +13,7 @@ const renderRobot = state => {
 
     let robotList = null;
     //遍历当前应该显示的屏幕下标号
-    loadingScreen.forEach(function (element) {
+    loadingScreen.forEach(element => {
         //通过屏幕号码获取信息
         let locationInfo = state.getIn([
             'robot', 'locationInfo', element.toString()
@@ -27,7 +27,7 @@ const renderRobot = state => {
             ? robotList.concat(locationInfo)
             : locationInfo;
 
-    }, this);
+    });
 
     return robotList.map(robot => (<Robot key={robot.robotid} info={robot}/>));
 
