@@ -1,8 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import BaseCom from './BaseComponent';
-import styled from 'styled-components';
-
 import ContainerApp from './App.style';
 import Title from './titile/index';
 import Content from './content/index';
@@ -21,4 +18,4 @@ class App extends BaseCom {
   }
 }
 
-export default connect()(App);
+export default App;
