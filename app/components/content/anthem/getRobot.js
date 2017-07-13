@@ -19,19 +19,17 @@ const renderRobot = state => {
             'robot', 'locationInfo', element.toString()
         ]);
         //排除undefined
-        if(!locationInfo){
+        if (!locationInfo) {
             return;
         }
-        
+
         robotList = robotList
             ? robotList.concat(locationInfo)
             : locationInfo;
 
     }, this);
 
-    return robotList.map(robot => {
-        return (<Robot key={robot.robotid} info={robot}/>);
-    });
+    return robotList.map(robot => (<Robot key={robot.robotid} info={robot}/>));
 
 }
 
