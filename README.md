@@ -9,9 +9,8 @@ Packaging [webpack3](https://github.com/webpack/webpack)
 ## Concept principle from google
 https://developers.google.com/web/updates/2016/07/infinite-scroller
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-principle.gif "principle")
-## Demo
+## Demo ( gif 15.2 MB,Expect you to wait patiently)
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
-![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.png "demo_png")
 
 ## Usage
 ```
