@@ -1,6 +1,6 @@
 
 ## Intro
-Waterfalls flow react demo simulate</br>
+Waterfalls like Pinterest、huaban.com、faxianla.com</br>
 By using [Redux](https://github.com/reactjs/redux) + [react-redux](https://github.com/reactjs/react-redux) + [styled-components](https://github.com/styled-components/styled-components) + [immutable.js](https://github.com/facebook/immutable-js)
 
 ## Run dev condition
