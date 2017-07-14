@@ -6,7 +6,9 @@ By using [Redux](https://github.com/reactjs/redux) + [react-redux](https://githu
 ## Run dev condition
 Dev images server is [koa2](https://github.com/koajs/koa) <b>node v8.x</b></br>
 Packaging [webpack3](https://github.com/webpack/webpack)
-
+## Concept principle from google
+https://developers.google.com/web/updates/2016/07/infinite-scroller
+![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-principle.gif "principle")
 ## Demo
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.png "demo_png")
