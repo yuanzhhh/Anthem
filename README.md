@@ -14,9 +14,11 @@ https://developers.google.com/web/updates/2016/07/infinite-scroller
 
 ## Usage
 ```
-# install node_modules
-git clone https://github.com/yuanzhhh/Anthem.git && cd Anthem
-npm install
+# clone
+git clone https://github.com/yuanzhhh/Anthem.git
+
+# install
+cd Anthem && npm install or yarn
 
 # dev
 npm run dev
