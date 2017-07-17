@@ -1,3 +1,5 @@
+## 中文
+[中文](https://github.com/yuanzhhh/Anthem/README-CN.md)
 
 ## Intro
 Waterfalls like Pinterest、huaban.com、faxianla.com</br>
