@@ -4,7 +4,7 @@ Waterfalls like Pinterest、huaban.com、faxianla.com</br>
 By using [Redux](https://github.com/reactjs/redux) + [react-redux](https://github.com/reactjs/react-redux) + [styled-components](https://github.com/styled-components/styled-components) + [immutable.js](https://github.com/facebook/immutable-js)
 
 ## Run dev condition
-<b>node v8.x</b>
+<b>node v8.x</b></br>
 Dev images server is [koa2](https://github.com/koajs/koa) </br>
 Packaging [webpack3](https://github.com/webpack/webpack)
 ## Concepts and principles of Anthem origin from google
