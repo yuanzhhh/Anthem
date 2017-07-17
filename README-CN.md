@@ -1,6 +1,7 @@
 
 ## 介绍
 Anthem 一款瀑布流项目，就像 Pinterest、huaban.com、faxianla.com</br>
+Anthem 对于无限滚动下拉加载达到了高性能实践</br>
 Anthem 名字的由来其实就是因为很喜欢 [圣歌（Anthem）](https://www.ea.com/games/anthem) 这款游戏</br>
 主要的技术栈使用 [Redux](https://github.com/reactjs/redux) + [react-redux](https://github.com/reactjs/react-redux) + [styled-components](https://github.com/styled-components/styled-components) + [immutable.js](https://github.com/facebook/immutable-js)
 
