@@ -1,4 +1,4 @@
-## 中文
+## Chinese
 [中文](https://github.com/yuanzhhh/Anthem/blob/master/README-CN.md)
 
 ## Intro
