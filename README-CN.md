@@ -12,6 +12,10 @@ Anthem 名字的由来其实就是因为很喜欢 [圣歌（Anthem）](https://w
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.png "demo_png")
 
+## Anthem 瀑布流概念来自谷歌的这张gif，有兴趣可以看看
+https://developers.google.com/web/updates/2016/07/infinite-scroller
+![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-principle.gif "principle")
+
 ## 使用方式
 ```
 # clone
