@@ -5,7 +5,7 @@ By using [Redux](https://github.com/reactjs/redux) + [react-redux](https://githu
 
 ## Run dev condition
 <b>node v8.x</b></br>
-Dev images server is [koa2](https://github.com/koajs/koa) </br>
+Images from develop server [koa2](https://github.com/koajs/koa) </br>
 Packaging [webpack3](https://github.com/webpack/webpack)
 ## Concepts and principles of Anthem origin from google
 https://developers.google.com/web/updates/2016/07/infinite-scroller
