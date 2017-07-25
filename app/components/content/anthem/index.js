@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import styled from 'styled-components';
 import {connect} from 'react-redux';
 
 import {getScrollTop, getScrollHeight, getWindowHeight} from '@/app/tool/scrollSetBottom';
@@ -8,14 +6,6 @@ import {getScrollTop, getScrollHeight, getWindowHeight} from '@/app/tool/scrollS
 import prop_dispatch from './index_prop_dispatch';
 //基类
 import BaseCom from '@/app/components/BaseComponent';
-
-/**
- * 容器组件
- */
-const Container = styled.div `
-    width: 100%;
-    position: relative;
-`;
 
 class Anthem extends BaseCom {
     constructor(props) {
@@ -26,9 +16,7 @@ class Anthem extends BaseCom {
     }
     componentDidMount() {
         //获取组件父级宽
-        let anthemContainerWidth = ReactDOM
-            .findDOMNode(this.refs.anthemContainer)
-            .offsetWidth;
+        let anthemContainerWidth = this.anthemContainer.clientWidth;
 
         //通过组件宽获取列宽
         this
@@ -257,13 +245,15 @@ class Anthem extends BaseCom {
 
     render() {
         return (
-            <Container
-                ref="anthemContainer"
+            <div
+                ref={anthemContainer=>this.anthemContainer=anthemContainer}
                 style={{
+                width: '100%',
+                position: 'relative',
                 height: this.props.containerHeight
             }}>
                 {this.props.renderRobot}
-            </Container>
+            </div>
         );
     }
 }
