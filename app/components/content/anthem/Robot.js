@@ -7,17 +7,20 @@ class Robot extends BaseCom {
     constructor(props) {
         super(props);
     }
+
     render() {
+        const { domWidth, left, top, img } = this.props.info;
+
         return (
             <div
                 style={{
-                width: this.props.info.domWidth,
+                width: domWidth,
                 position: 'absolute',
-                left: this.props.info.left,
-                top: this.props.info.top
+                left: left,
+                top: top
             }}>
                 <img
-                    src={"http://" + serverConf.imgserver + "/" + this.props.info.img}
+                    src={"http://" + serverConf.imgserver + "/" + img}
                     style={{
                     maxWidth: '100%',
                     border: 0,

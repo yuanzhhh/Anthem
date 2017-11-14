@@ -54,6 +54,7 @@ const dispatchToProps = (dispatch, ownProps) => {
       type: 'SET_columnsWidth',
       data: width
     }),
+
     /**
      * 获取可视区域高度
      */
@@ -61,6 +62,7 @@ const dispatchToProps = (dispatch, ownProps) => {
       type: 'SET_windowHeight',
       data: height
     }),
+
     /**
      * 添加新图片位置信息
      * imglist 图片
@@ -73,6 +75,7 @@ const dispatchToProps = (dispatch, ownProps) => {
         screenNumIng
       }
     }),
+
     /**
      * 获取left值
      */

@@ -15,40 +15,33 @@ class Anthem extends BaseCom {
         }
     }
     componentDidMount() {
+
+        const { setColumnsWidth, setWindowHeight, setlocationLeft, setInitTop, maxcolumns } = this.props;
+
         //获取组件父级宽
         let anthemContainerWidth = this.anthemContainer.clientWidth;
 
         //通过组件宽获取列宽
-        this
-            .props
-            .setColumnsWidth(anthemContainerWidth);
+        setColumnsWidth(anthemContainerWidth);
+
         //获取可视区域高度
-        this
-            .props
-            .setWindowHeight(document.documentElement.clientHeight);
+        setWindowHeight(document.documentElement.clientHeight);
 
         //获取left坐标
-        this
-            .props
-            .setlocationLeft();
+        setlocationLeft();
 
         //定位初始化top值
-        this
-            .props
-            .setInitTop(this.props.maxcolumns);
+        setInitTop(maxcolumns);
 
-        this
-            .getNewImg()
-            .then(() => window.onscroll = () => this.scrollAction());
+        this.getNewImg().then(() => window.onscroll = () => this.scrollAction());
 
     }
+
     //随机id
     performanceId() {
-        return performance
-            .now()
-            .toString()
-            .substring(0, 6);
+        return performance.now().toString().substring(0, 6);
     }
+
     /**
      * 生成机器人id
      */
@@ -58,30 +51,18 @@ class Anthem extends BaseCom {
             return this.performanceId();
         }
 
-        const getNoShowRobotListNum = getInfo
-            .getNoShowRobotListNum
-            .toString();
+        const getNoShowRobotListNum = getInfo.getNoShowRobotListNum.toString();
 
-        const i = getInfo
-            .i
-            .toString();
+        const i = getInfo.i.toString();
 
-        const domInfo = this
-            .props
-            .locationInfo
-            .getIn([getNoShowRobotListNum, i]);
+        const domInfo = this.props.locationInfo.getIn([getNoShowRobotListNum, i]);
 
-        return domInfo
-            ? domInfo.robotid
-            : this.performanceId();
+        return domInfo ? domInfo.robotid : this.performanceId();
     }
 
     //新资源
     getNewImg(getNoShowRobotListNum) {
-        return this
-            .props
-            .getNewImgData(this.props.requestImgNum)
-            .then(res => {
+        return this.props.getNewImgData(this.props.requestImgNum).then(res => {
 
                 for (let i = 0; i < res.data.length; i++) {
 
@@ -106,12 +87,11 @@ class Anthem extends BaseCom {
         let screenAllNum = this.props.screenAllNum;
 
         //定位与列数一直时 换行
-        this.state.positioningNum == this.props.maxcolumns
-            ? this.state.positioningNum = 0
-            : null;
+        this.state.positioningNum == this.props.maxcolumns ? this.state.positioningNum = 0 : null;
 
         //图片原始宽度
         const imgWidth = element.width;
+
         //列宽限定
         const columnsWidth = this.props.columnsWidth;
 
@@ -138,23 +118,17 @@ class Anthem extends BaseCom {
         element.columnsNum = minTopNum;
 
         //设定下一个同列图片的top
-        this
-            .props
-            .setTop(minTopNum, imgHeight);
+        this.props.setTop(minTopNum, imgHeight);
 
         const topNum = this.props.robotTopLocation[minTopNum];
 
-        this
-            .props
-            .upContainerHeight(topNum);
+        this.props.upContainerHeight(topNum);
 
         //获取所放置的屏幕号 下标
         let srceenIng = screenAllNum - 1;
 
         //创建
-        this
-            .props
-            .addlocationInfo(element, robotId, srceenIng);
+        this.props.addlocationInfo(element, robotId, srceenIng);
 
         //增长
         this.state.positioningNum++;
@@ -164,9 +138,7 @@ class Anthem extends BaseCom {
 
             //超出高度 则不管了
             return 'beyond';
-
         }
-
     }
 
     scrollAction() {
@@ -183,61 +155,41 @@ class Anthem extends BaseCom {
 
         if (scrollTop === getScrollHeight()) {
             //增加下一个屏幕的元素队列
-            this
-                .props
-                .addlocationInfoNum(this.props.screenAllNum);
+            this.props.addlocationInfoNum(this.props.screenAllNum);
 
             //增加屏幕
-            this
-                .props
-                .addScreen();
+            this.props.addScreen();
 
             //增加当前加载的屏幕队
-            this
-                .props
-                .addloadingScreen(this.props.screenAllNum);
+            this.props.addloadingScreen(this.props.screenAllNum);
 
             //获取未显示的机器人屏幕下标
             const getNoShowRobotListNum = this.props.screenAllNum - 4;
 
-            this.getNewImg((getNoShowRobotListNum < 1
-                ? undefined
-                //传入下标
-                : (getNoShowRobotListNum - 1)));
-
+            this.getNewImg((getNoShowRobotListNum < 1 ? undefined : (getNoShowRobotListNum - 1)));
         }
     }
 
     //显示屏幕号 change
     changeScreen(screenNumIng) {
         //update oldScreen
-        this
-            .props
-            .changeOldNum(this.props.numIng);
+        this.props.changeOldNum(this.props.numIng);
 
         //update screenIng
-        this
-            .props
-            .changeScreen(screenNumIng);
+        this.props.changeScreen(screenNumIng);
 
         if (screenNumIng > this.props.oldNum) {
-            //down
             const newShowScreenNum = screenNumIng + 2;
+
             (this.props.loadingScreen.indexOf(newShowScreenNum) === -1)
-                ? this
-                    .props
-                    .downChange(screenNumIng)
+                ? this.props.downChange(screenNumIng)
                 : null;
 
         } else if (screenNumIng < this.props.oldNum) {
-
-            //up
             const newShowScreenNum = screenNumIng - 2;
 
             (this.props.loadingScreen.indexOf(newShowScreenNum) === -1)
-                ? this
-                    .props
-                    .upChange(screenNumIng)
+                ? this.props.upChange(screenNumIng)
                 : null;
 
         }

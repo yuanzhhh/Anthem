@@ -10,29 +10,33 @@ module.exports = (state = immutable.fromJS(robot), action) => {
      * 新增加机器人
      */
     case 'SET_addlocationInfo':
+      const { robotId, screenNumIng, imgdata, } = action.data;
+      const { src, width, height, left, top, domHeight, domWidth, columnsNum} = imgdata;
 
-      return state.updateIn(['locationInfo', action.data.screenNumIng.toString()], list => list.push({
-        robotid: action.data.robotId,
-        img: action.data.imgdata.src,
-        owidth: action.data.imgdata.width,
-        oheight: action.data.imgdata.height,
-        left: action.data.imgdata.left,
-        top: action.data.imgdata.top,
-        domHeight: action.data.imgdata.domHeight,
-        domWidth: action.data.imgdata.domWidth,
-        columnsNum: action.data.imgdata.columnsNum
+      return state.updateIn(['locationInfo', screenNumIng.toString()], list => list.push({
+        robotid: robotId,
+        img: src,
+        owidth: width,
+        oheight: height,
+        left: left,
+        top: top,
+        domHeight: domHeight,
+        domWidth: domWidth,
+        columnsNum: columnsNum
       }));
 
       //存储robot
     case 'SET_robotContainer':
+
       return state.update('robotContainer', container => {
-        const br = action.data.map(item => {
+        const getRobot = action.data.map(item => {
           return {
             robotid: item.robotid,
             info: item
           }
         });
-        return container.concat(br);
+
+        return container.concat(getRobot);
       });
 
       /**
@@ -40,12 +44,14 @@ module.exports = (state = immutable.fromJS(robot), action) => {
        */
     case 'SET_initTop':
       return state.set('robotTopLocation', new Array(action.data).fill(0));
+
       /**
        * 更新top值
        */
     case 'SET_top':
       return state.update('robotTopLocation', list => {
         list[action.data.columnsNum] += action.data.height;
+
         return list;
       });
 

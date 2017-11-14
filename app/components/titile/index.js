@@ -27,9 +27,6 @@ const TitleContainer = styled.div `
 `;
 
 class Title extends BaseCom {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <TitleContainer>

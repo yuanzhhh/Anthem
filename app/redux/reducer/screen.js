@@ -15,8 +15,10 @@ module.exports = (state = immutable.fromJS(screen), action) => {
        * 增加当前加载的屏幕队
        */
     case 'ADD_loadingScreen':
+
       //屏幕总数
       let subscript = action.data - 1;
+
       //返回新的显示数组
       return state.update('loadingScreen', loadingScreenList => {
         //最多显示4个屏幕
@@ -27,6 +29,7 @@ module.exports = (state = immutable.fromJS(screen), action) => {
           }
           loadingScreenList = loadingScreenList.set(i, showScreen);
         }
+
         return loadingScreenList;
       });
 

@@ -11,9 +11,6 @@ const ContainerApp = styled.div `
 `;
 
 class App extends BaseCom {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <ContainerApp>

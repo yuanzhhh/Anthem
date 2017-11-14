@@ -11,9 +11,6 @@ const Container = styled.div `
 `;
 
 class anthemContent extends BaseCom {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <Container>
