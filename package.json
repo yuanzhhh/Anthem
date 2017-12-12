@@ -3,7 +3,6 @@
   "description": "Anthem for eeeik v2.0",
   "main": "app/main.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack.production.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app"
   },
   "dependencies": {
