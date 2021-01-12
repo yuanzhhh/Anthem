@@ -1,3 +1,4 @@
+**🚨 NOTICE: Sorry, I haven't maintained this project for a long time, so this project is for reference and experiment only.**
 
 ## 介绍
 Anthem 一款瀑布流项目，就像 Pinterest、huaban.com、faxianla.com</br>
@@ -9,7 +10,7 @@ Anthem 名字的由来其实就是因为很喜欢 [圣歌（Anthem）](https://w
 项目内含一个HTTP服务器[koa2](https://github.com/koajs/koa) 用于图片输出，所以直接启动它<b>需要node版本在8.x以上</b>，或者您可以自行使用babel、runkoa</br>
 打包使用 [webpack3](https://github.com/webpack/webpack)，[react-hot-loader](https://github.com/gaearon/react-hot-loader)模块热更新
 
-## Demo （gif图片为15MB，所以加载可能在部分地区较为慢并且帧数较低，建议直接clone代码运行，可以感受流畅的效果）
+## Demo
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.png "demo_png")
 
