@@ -1,3 +1,5 @@
+**🚨 NOTICE: Sorry, I haven't maintained this project for a long time, so this project is for reference and experiment only.**
+
 ## Chinese
 [中文](https://github.com/yuanzhhh/Anthem/blob/master/README-CN.md)
 
@@ -12,7 +14,7 @@ Packaging [webpack3](https://github.com/webpack/webpack)
 ## Concepts and principles of Anthem origin from google
 https://developers.google.com/web/updates/2016/07/infinite-scroller
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-principle.gif "principle")
-## Demo (Gif 15.2 MB,Expect you to wait patiently)
+## Demo
 ![demo](https://github.com/yuanzhhh/resources/blob/master/anthem-dome.gif "demo_gif")
 
 ## Usage
