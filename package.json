@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --devtool eval --progress --hot --content-base app"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "babel-runtime": "6.x",
     "immutable": "^3.8.1",
     "normalize.css": "^7.0.0",
